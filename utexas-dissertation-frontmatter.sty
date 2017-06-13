@@ -1,0 +1,122 @@
+\ProvidesPackage{utexas-dissertation-frontmatter}[2016/07/06 Frontmatter Macros for UTexas Dissertation]
+
+%%%%%%%%%%%%%%%%%%%%%
+%%%% Title Macro %%%%
+%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\printtitle}{%
+    \begin{center}
+        \textbf{\large \@title \\ \@subtitle}
+    \end{center}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%
+%%%% Title Page %%%%
+%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\maketitle}{%
+  \begin{frontmatters}
+  \thispagestyle{empty}%
+  \begin{center}
+
+    \textbf{\large \@title\\
+    \@subtitle}
+
+    \vfill
+
+    By
+
+    \vfill
+
+    \textbf{\@author}\\
+
+    \vfill
+
+    \textbf{\@doctype}
+
+    \vfill
+	
+	Presented to the Faculty of the Graduate School\\
+	of the University of Texas at Austin\\
+	in Partial Fulfillment\\
+    of the Requirements\\
+	for the Degree of
+
+    \vfill
+
+    \textbf{\@degree}
+
+    \vfill
+
+    The University of Texas at Austin\\
+    \@date
+  \end{center}
+  \end{frontmatters}
+  \setcounter{page}{1}
+}
+
+\def\author#1{\gdef\@author{#1}}
+\def\@author{Full Official Name (or registered preferred name)}
+\def\title#1{\gdef\@title{#1}}
+\def\@title{Dissertation Title}
+\def\subtitle#1{\gdef\@subtitle{#1}}
+\def\@subtitle{Dissertation Subtitle}
+\def\doctype#1{\gdef\@doctype{#1}}
+\def\@doctype{Document Type (Dissertation, Treatise, Thesis or Report)}
+\def\degree#1{\gdef\@degree{#1}}
+\def\@degree{Name of Degree}
+\def\date#1{\gdef\@date{#1}}
+\def\@date{Month (May, August, or December only) Year}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Copyright Page %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\makecopyright}{%
+    \newgeometry{tmargin=3in}
+    \thispagestyle{empty}
+    \begin{center}
+        Copyright\\[36pt]
+        by\\[36pt]
+        \@author\\[36pt]
+        \@date
+    \end{center}
+    %% More Here
+    \restoregeometry
+    \setcounter{page}{1}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Signature Page %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\makesignatures}{%
+    \begin{frontmatters}
+    \thispagestyle{empty}%
+    \begin{center}
+        The Dissertation Committee for \@author\\
+        certifies that this is the approved version of the following dissertation:\\[36pt]
+
+        \printtitle
+        \end{center}
+
+        \textbf{Committee:}
+        
+        ...
+    %% More Here
+    \end{frontmatters}
+    \setcounter{page}{1}
+}
+
+
+%%%% Dedication and/or Epigraph %%%%
+%%%% Acknowledgements and/or Preface %%%
+
+%%%%%%%%%%%%%%%%%%
+%%%% Abstract %%%%
+%%%%%%%%%%%%%%%%%%
+\renewenvironment{abstract}{
+    \begin{frontmatters}
+    \printtitle%
+    \par}{\end{frontmatters}}
+
+\newenvironment{frontmatters}{%
+    \newgeometry{tmargin=1.5in}%
+}{\restoregeometry}
