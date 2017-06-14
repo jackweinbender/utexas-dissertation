@@ -1,0 +1,12 @@
+\ProvidesPackage{utexas-dissertation-frontmatter}[2016/07/06 TOC for UTexas Dissertation]
+
+% Rename ToC
+\renewcommand\contentsname{Table of Contents}
+
+% Add dot-leader to the Chapter Entries
+\renewcommand*{\cftchaptername}{Chapter\space}
+\renewcommand*{\cftchapteraftersnum}{:}
+\renewcommand{\cftchapterdotsep}{\cftdotsep}
+
+% Set the depth of the ToC
+\settocdepth{section}

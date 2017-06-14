@@ -5,7 +5,8 @@
 %%%%%%%%%%%%%%%%%%%%%
 \newcommand{\printtitle}{%
     \begin{center}
-        \textbf{\large \@title \\ \@subtitle}
+        \textit{\large \@title \\ \@subtitle}
+        \afterchaptertitle
     \end{center}
 }
 
@@ -18,7 +19,7 @@
   \thispagestyle{empty}%
   \begin{center}
 
-    \textbf{\large \@title\\
+    \textit{\large \@title\\
     \@subtitle}
 
     \vfill
@@ -36,7 +37,7 @@
     \vfill
 	
 	Presented to the Faculty of the Graduate School\\
-	of the University of Texas at Austin\\
+	of \@institution\\
 	in Partial Fulfillment\\
     of the Requirements\\
 	for the Degree of
@@ -47,7 +48,7 @@
 
     \vfill
 
-    The University of Texas at Austin\\
+    \@institution\\
     \@date
   \end{center}
   \end{frontmatters}
@@ -64,20 +65,26 @@
 \def\@doctype{Document Type (Dissertation, Treatise, Thesis or Report)}
 \def\degree#1{\gdef\@degree{#1}}
 \def\@degree{Name of Degree}
+\def\institution#1{\gdef\@institution{#1}}
+\def\@institution{Institution}
 \def\date#1{\gdef\@date{#1}}
 \def\@date{Month (May, August, or December only) Year}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Copyright Page %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%
+\def\copyrightyear#1{\gdef\@copyrightyear{#1}}
+\def\@copyrightyear{2019}
+
 \newcommand{\makecopyright}{%
     \newgeometry{tmargin=3in}
     \thispagestyle{empty}
     \begin{center}
-        Copyright\\[36pt]
-        by\\[36pt]
-        \@author\\[36pt]
-        \@date
+        Copyright\\[24pt]
+        by\\[24pt]
+        \@author\\[24pt]
+        \@copyrightyear
     \end{center}
     %% More Here
     \restoregeometry
@@ -87,20 +94,63 @@
 %%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Signature Page %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\makesignatures}{%
+
+\def\supervisor#1{\gdef\@supervisor{#1}}
+\def\@supervisor{[Dissertation Supervisor]}
+\def\memberone#1{\gdef\@memberone{#1}}
+\def\@memberone{[Member \#1]}
+\def\membertwo#1{\gdef\@membertwo{#1}}
+\def\@membertwo{[Member \#2]}
+\def\memberthree#1{\gdef\@memberthree{#1}}
+\def\@memberthree{[Member \#3]}
+\def\memberfour#1{\gdef\@memberfour{#1}}
+\def\@memberfour{[Member \#4]}
+\def\memberfive#1{\gdef\@memberfive{#1}}
+\def\@memberfive{[Member \#5]}
+
+
+\def\numberofmembers#1{\gdef\@numberofmembers{#1}}
+\def\@numberofmembers{2}
+
+\newcommand{\makesupervisor}{
+    \hfill\rule{3.25in}{0.5pt}\\
+    \hfill\makebox[3.25in][l]{\@supervisor, Supervisor }\\
+    \bigskip \medskip
+}
+\newcommand{\makemember}[1]{
+    \hfill\rule{3.25in}{0.5pt}\\
+    \hfill\makebox[3.25in][l]{#1}\\
+    \bigskip \medskip
+}
+
+\newcommand{\makesignatures}[1][1]{%
     \begin{frontmatters}
     \thispagestyle{empty}%
     \begin{center}
         The Dissertation Committee for \@author\\
-        certifies that this is the approved version of the following dissertation:\\[36pt]
+        certifies that this is the approved version of the following dissertation:\\[48pt]
 
-        \printtitle
+        \textit{\large \@title \\ \@subtitle}\\[24pt]
         \end{center}
 
-        \textbf{Committee:}
-        
-        ...
-    %% More Here
+        \hfill\makebox[3.25in][l]{\bfseries Comittee:}\\[36pt]
+        \SingleSpace
+        \makesupervisor
+        \makemember{\@memberone}
+        \ifnum \@numberofmembers > 2
+        \makemember{\@membertwo}
+        \fi
+        \ifnum \@numberofmembers > 3
+        \makemember{\@memberthree}
+        \fi
+        \ifnum \@numberofmembers > 4
+        \makemember{\@memberfour}
+        \fi
+        \ifnum \@numberofmembers > 5
+        \makemember{\@memberfive}
+        \fi
+
+
     \end{frontmatters}
     \setcounter{page}{1}
 }
@@ -112,10 +162,23 @@
 %%%%%%%%%%%%%%%%%%
 %%%% Abstract %%%%
 %%%%%%%%%%%%%%%%%%
+\def\degreeabbr#1{\gdef\@degreeabbr{#1}}
+\def\@degreeabbr{Ph.D.}
 \renewenvironment{abstract}{
     \begin{frontmatters}
-    \printtitle%
-    \par}{\end{frontmatters}}
+    \thispagestyle{empty}%
+    \begin{center}
+
+        \textit{\large \@title\\
+        \@subtitle}\\[24pt]
+
+        By\\[24pt]
+
+        \textbf{\@author, \@degreeabbr,}\\
+        \@institution, \@copyrightyear\\
+        SUPERVISOR: \@supervisor
+    \end{center}\par}%
+    {\end{frontmatters}}
 
 \newenvironment{frontmatters}{%
     \newgeometry{tmargin=1.5in}%

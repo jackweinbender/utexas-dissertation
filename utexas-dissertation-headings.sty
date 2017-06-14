@@ -1,0 +1,21 @@
+\ProvidesPackage{utexas-dissertation-headings}[2016/07/06 Headings for UTexas Dissertation]
+
+% Set numbering Depth
+\setsecnumdepth{subsection}
+
+% Chapter Formatting
+\makechapterstyle{utexas-dissertation}{%
+  \renewcommand*{\printchaptername}{}
+  \renewcommand*{\chaptitlefont}{\large\itshape\centering}
+  \renewcommand*{\chapnumfont}{\chaptitlefont}
+  \renewcommand*{\printchapternum}{\chapnumfont Chapter \thechapter}
+  \renewcommand{\afterchaptertitle}{%
+    \vskip\onelineskip \hrule\vskip\onelineskip}
+  \renewcommand*{\afterchapternum}{:\space}
+}
+\chapterstyle{utexas-dissertation}
+
+% Section and Subsection formatting
+\setsecheadstyle{\centering\MakeUppercase}
+\setsubsecheadstyle{\bfseries}
+\setsubsubsecheadstyle{\itshape}

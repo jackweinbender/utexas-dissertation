@@ -8,6 +8,7 @@
 % Set Ragged Right
 \usepackage{ragged2e}
 \RaggedRight
+\setlength{\parindent}{3em}
 
 % Set Pagination to bottom/center
 \pagestyle{plain}
@@ -20,3 +21,9 @@
 
 % Frontmatter
 \usepackage{utexas-dissertation-frontmatter}
+
+% Table of Contents
+\usepackage{utexas-dissertation-toc}
+
+% Heading Styles
+\usepackage{utexas-dissertation-headings}
