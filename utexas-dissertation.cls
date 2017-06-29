@@ -17,7 +17,9 @@
 \usepackage{utexas-dissertation-footnotes}
 
 % Global typographic properties (not Font family)
-\DoubleSpacing 
+% \DoubleSpacing % < This is what Memoir class suggests, but it's not enough
+\renewcommand{\baselinestretch}{2}
+
 
 % Frontmatter
 \usepackage{utexas-dissertation-frontmatter}
