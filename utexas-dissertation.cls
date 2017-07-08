@@ -13,6 +13,9 @@
 % Set Pagination to bottom/center
 \pagestyle{plain}
 
+% Typography
+\usepackage{utexas-dissertation-typography}
+
 % Set Footnote Styles
 \usepackage{utexas-dissertation-footnotes}
 
