@@ -1,16 +1,9 @@
 \ProvidesPackage{utexas-dissertation-footnotes}[2016/07/06 Footnotes for UT Dissertation style]
 
+%% Looks good, but breaks Memoir settings
+% \usepackage[ragged,bottom]{footmisc}
 
-\usepackage[ragged,bottom]{footmisc}
-% \usepackage{quoting}
-
-% \renewcommand{\footnotelayout}{\raggedright}
-% \renewcommand{\footnotesize}{\small}
-
-% \renewcommand\footnoterule{\kern-3pt \hrule width 2in \kern 2.6pt\vskip -8pt}
-%   \setlength{\footnotemargin}{0.5in}
-%   \setlength{\footnotesep}{18pt}
-%   \quotingsetup{leftmargin=0.5in,rightmargin=0in,vskip=0pt}
-
-% \renewcommand*{\quotingfont}{\onehalfspace}
-%   \setlength{\bibitemsep}{14.5pt}
+%% For Drafting purposes (Works with Memoir stuff)
+\renewcommand{\foottextfont}{\renewcommand{\baselinestretch}{2}\normalsize}
+\setlength{\footskip}{\onelineskip}
+\setlength{\footnotesep}{\onelineskip}
