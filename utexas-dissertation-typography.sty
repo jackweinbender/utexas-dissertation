@@ -3,20 +3,48 @@
 
 % Unicode Font and OpenType Support
 \usepackage{fontspec}
+\usepackage{csquotes}
+\usepackage[nil,bidi=default]{babel}
+
+\babelprovide[import=en-US,main]{american}
+\babelprovide[import=he]{hebrew}
+\babelprovide[import=el]{polutonikogreek}
+\babelfont[american]{rm}[Ligatures=TeX]{Linux Libertine O}
+\babelfont[hebrew]{rm}%
+  [Ligatures=TeX,Contextuals=Alternate]{SBL Hebrew}
+\babelfont[polutonikogreek]{rm}%
+  [Ligatures=TeX,Contextuals=Alternate]{SBL Greek}
 
 % Because not everyone has the OpenType version of
 % Linux Libertine installed, like me
 % Load the TeX Libertine Package if not
 % \usepackage{libertine}
 
-\setmainfont{Linux Libertine O}
-\setsansfont{Linux Biolinum O}
-\setmonofont{Linux Libertine Mono O}
+% \setmainfont{Linux Libertine O}
+% \setsansfont{Linux Biolinum O}
+% \setmonofont{Linux Libertine Mono O}
 
-\IfFontExistsTF{SBL Hebrew}
-    {\newfontfamily\hebrew{SBL Hebrew}[Scale=1.1,Script=Hebrew]}
-    {\PackageWarning{UT Typography}{Install the SBL Hebrew font for the best experience. See: https://www.sbl-site.org/educational/biblicalfonts.aspx}}
+% \IfFontExistsTF{SBL Hebrew}
+%     {\newfontfamily\hebrew{SBL Hebrew}[Scale=1.1,Script=Hebrew]}
+%     {\PackageWarning{UT Typography}{Install the SBL Hebrew font for the best experience. See: https://www.sbl-site.org/educational/biblicalfonts.aspx}}
 
-\IfFontExistsTF{SBL Greek}
-    {\newfontfamily\greek{SBL Greek}[Script=Greek]}
-    {\PackageWarning{UT Typography}{Install the SBL Greek font for the best experience. See: https://www.sbl-site.org/educational/biblicalfonts.aspx}}
+% \IfFontExistsTF{SBL Greek}
+%     {\newfontfamily\greek{SBL Greek}[Script=Greek]}
+%     {\PackageWarning{UT Typography}{Install the SBL Greek font for the best experience. See: https://www.sbl-site.org/educational/biblicalfonts.aspx}}
+
+\providecommand{\gk}[1]{\foreignlanguage{hebrew}{#1}\xspace}
+\providecommand{\hebrew}[1]{\foreignlanguage{greek}{#1}\xspace}
+% \providecommand{\cop}[1]{#1\xspace}
+% \providecommand{\aram}[1]{#1\xspace}
+% \providecommand{\syr}[1]{#1\xspace}
+% \providecommand{\eth}[1]{#1\xspace}
+% \providecommand{\arab}[1]{#1\xspace}
+% \providecommand{\tr}[1]{\emph{#1}\xspace}
+
+% Prefered fonts
+% \fontspec{SBL Greek}            [Script=Greek,Scale=MatchUppercase]
+% \fontspec{New Athena Unicode}   [Script=Coptic,Scale=MatchUppercase]
+% \fontspec{SBL Hebrew}           [Script=Hebrew,Scale=1.14]
+% \fontspec{Estrangelo Edessa}    [Script=Syriac]
+% \fontspec{Abyssinica SIL}       [Script=Ethiopic,Scale=MatchUppercase]
+% \fontspec{Scheherazade}         [Script=Arabic,Scale=1.5]
