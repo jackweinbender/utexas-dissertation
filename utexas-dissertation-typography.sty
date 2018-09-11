@@ -4,19 +4,26 @@
 % Unicode Font and OpenType Support
 \usepackage{fontspec}
 
-% Because not everyone has the OpenType version of
-% Linux Libertine installed, like me
-% Load the TeX Libertine Package if not
-% \usepackage{libertine}
-
 \setmainfont{Linux Libertine O}
 \setsansfont{Linux Biolinum O}
 \setmonofont{Linux Libertine Mono O}
 
+
+% Non-roman scripts
+\usepackage{polyglossia}
+\setmainlanguage{english}
+\setotherlanguages{hebrew, greek}
+
+% Aramaic (Aliased Hebrew)
+\newcommand{\aram}[1]{\texthebrew{#1}}
+% Hebrew
+\newcommand{\he}[1]{\texthebrew{#1}}
 \IfFontExistsTF{SBL Hebrew}
     {\newfontfamily\hebrew{SBL Hebrew}[Scale=1.1,Script=Hebrew]}
     {\PackageWarning{UT Typography}{Install the SBL Hebrew font for the best experience. See: https://www.sbl-site.org/educational/biblicalfonts.aspx}}
 
+% Greek
+\newcommand{\gk}[1]{\textgreek{#1}}
 \IfFontExistsTF{SBL Greek}
     {\newfontfamily\greek{SBL Greek}[Script=Greek]}
     {\PackageWarning{UT Typography}{Install the SBL Greek font for the best experience. See: https://www.sbl-site.org/educational/biblicalfonts.aspx}}
