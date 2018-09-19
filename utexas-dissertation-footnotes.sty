@@ -1,4 +1,17 @@
 \ProvidesPackage{utexas-dissertation-footnotes}[2016/07/06 Footnotes for UT Dissertation style]
 
-%% Looks good, but breaks Memoir settings
-% \usepackage[ragged,bottom]{footmisc}
+% Covers the footnote space and font settings.
+
+% MEMOIR DEFAULTS: 
+    % \footnotesep  = 12pt
+    % \footnotesize = \small
+
+%%%%%% Default STYLES %%%%%%
+\setlength{\footnotesep}{18pt}
+\renewcommand{\footnotesize}{\normalsize\selectfont}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% %%%%%% DRAFT STYLES %%%%%%
+% \renewcommand{\foottextfont}{\renewcommand{\baselinestretch}{2}\normalsize}
+% \setlength{\footnotesep}{24pt}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%
