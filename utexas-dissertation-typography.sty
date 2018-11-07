@@ -19,11 +19,11 @@
 % Hebrew
 \newcommand{\he}[1]{\texthebrew{#1}}
 \IfFontExistsTF{SBL Hebrew}
-    {\newfontfamily\hebrew{SBL Hebrew}[Scale=1.1,Script=Hebrew]}
+    {\newfontfamily\heb{SBL Hebrew}[Scale=1.1,Script=Hebrew]}
     {\PackageWarning{UT Typography}{Install the SBL Hebrew font for the best experience. See: https://www.sbl-site.org/educational/biblicalfonts.aspx}}
 
 % Greek
 \newcommand{\gk}[1]{\textgreek{#1}}
 \IfFontExistsTF{SBL Greek}
-    {\newfontfamily\greek{SBL Greek}[Script=Greek]}
+    {\newfontfamily\grk{SBL Greek}[Script=Greek]}
     {\PackageWarning{UT Typography}{Install the SBL Greek font for the best experience. See: https://www.sbl-site.org/educational/biblicalfonts.aspx}}
