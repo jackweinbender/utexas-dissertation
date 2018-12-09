@@ -8,22 +8,22 @@
 \setsansfont{Linux Biolinum O}
 \setmonofont{Linux Libertine Mono O}
 
+\usepackage{csquotes}
 
-% Non-roman scripts
-\usepackage{polyglossia}
-\setmainlanguage{english}
-\setotherlanguages{hebrew, greek}
+\usepackage[nil,bidi=default]{babel}
+    \babelprovide[import=en-US,main]{american}
+    \babelprovide[import=he]{hebrew}
+    \babelprovide[import=el]{polutonikogreek}
 
-% Aramaic (Aliased Hebrew)
-\newcommand{\aram}[1]{\texthebrew{#1}}
+        \babelfont[american]{rm}[Ligatures=TeX]{Linux Libertine O}
+        \babelfont[hebrew]{rm}%
+            [Scale=1.1,Script=Hebrew,Ligatures=TeX,Contextuals=Alternate]{SBL Hebrew}
+        \babelfont[polutonikogreek]{rm}%
+            [Ligatures=TeX,Contextuals=Alternate]{SBL Greek}
+
 % Hebrew
-\newcommand{\he}[1]{\texthebrew{#1}}
-\IfFontExistsTF{SBL Hebrew}
-    {\newfontfamily\heb{SBL Hebrew}[Scale=1.1,Script=Hebrew]}
-    {\PackageWarning{UT Typography}{Install the SBL Hebrew font for the best experience. See: https://www.sbl-site.org/educational/biblicalfonts.aspx}}
-
+\newcommand{\he}[1]{\foreignlanguage{hebrew}{#1}}
+% Aramaic (Aliased Hebrew)
+\newcommand{\aram}[1]{\he{#1}}
 % Greek
-\newcommand{\gk}[1]{\textgreek{#1}}
-\IfFontExistsTF{SBL Greek}
-    {\newfontfamily\grk{SBL Greek}[Script=Greek]}
-    {\PackageWarning{UT Typography}{Install the SBL Greek font for the best experience. See: https://www.sbl-site.org/educational/biblicalfonts.aspx}}
+\newcommand{\gk}[1]{\foreignlanguage{polutonikogreek}{#1}}
