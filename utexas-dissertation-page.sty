@@ -15,3 +15,18 @@
 
 % Set Pagination to bottom/center
 \pagestyle{plain}
+
+% set up quotations
+
+\renewenvironment{quote}%
+                 {\list{}{\leftmargin    0.5in
+                          \rightmargin   0.5in
+                          \topsep        18pt
+                          \partopsep     \z@
+                          \itemsep       \z@
+                          \parsep        18pt
+                          \itemindent    \z@
+                          \listparindent 0.5in
+                          }%
+                        \item[]\setSpacing{1.25}}%
+{\endlist}
