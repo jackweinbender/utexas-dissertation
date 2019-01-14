@@ -3,23 +3,29 @@
 
 % Unicode Font and OpenType Support
 \usepackage{fontspec}
-
-\setmainfont{Linux Libertine O}
-\setsansfont{Linux Biolinum O}
-\setmonofont{Linux Libertine Mono O}
-
 \usepackage{csquotes}
 
+% Language Support
 \usepackage[nil,bidi=default]{babel}
+    % Import Language INI files
     \babelprovide[import=en-US,main]{american}
     \babelprovide[import=he]{hebrew}
     \babelprovide[import=el]{polutonikogreek}
+    \babelprovide[import=am]{amharic}
 
-        \babelfont[american]{rm}[Ligatures=TeX]{Linux Libertine O}
+        % Set Fonts for Languages
+        \babelfont[american]{rm}%
+            [Ligatures=TeX]%
+                {Linux Libertine O}
         \babelfont[hebrew]{rm}%
-            [Scale=1.1,Script=Hebrew,Ligatures=TeX,Contextuals=Alternate]{SBL Hebrew}
+            [Scale=1.1,Script=Hebrew,Ligatures=TeX,Contextuals=Alternate]%
+                {SBL Hebrew}
         \babelfont[polutonikogreek]{rm}%
-            [Ligatures=TeX,Contextuals=Alternate]{SBL Greek}
+            [Ligatures=TeX,Contextuals=Alternate]%
+                {SBL Greek}
+        \babelfont[amharic]{rm}%
+            [Scale=1.1,Script=Hebrew,Ligatures=TeX,Contextuals=Alternate]%
+                {Abyssinica SIL}
 
 % Hebrew
 \newcommand{\he}[1]{\foreignlanguage{hebrew}{#1}}
@@ -27,3 +33,5 @@
 \newcommand{\aram}[1]{\he{#1}}
 % Greek
 \newcommand{\gk}[1]{\foreignlanguage{polutonikogreek}{#1}}
+% Geez
+\newcommand{\eth}[2]{\foreignlanguage{amharic}{#1} [\emph{#2}]}
