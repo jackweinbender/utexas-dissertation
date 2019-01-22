@@ -28,10 +28,15 @@
                 {Abyssinica SIL}
 
 % Hebrew
-\newcommand{\he}[1]{\foreignlanguage{hebrew}{#1}}
+\newcommand{\he}[1]{\hebrew{#1}}
 % Aramaic (Aliased Hebrew)
-\newcommand{\aram}[1]{\he{#1}}
+\newcommand{\aram}[1]{\aramaic{#1}}
 % Greek
-\newcommand{\gk}[1]{\foreignlanguage{polutonikogreek}{#1}}
+\newcommand{\gk}[1]{\greek{#1}}
 % Geez
-\newcommand{\eth}[2]{\foreignlanguage{amharic}{#1} [\emph{#2}]}
+\newcommand{\eth}[2]{\ethiopic{#1}}
+
+\newcommand{\aramaic}[1]{\foreignlanguage{hebrew}{#1}}
+\newcommand{\hebrew}[1]{\foreignlanguage{hebrew}{#1}}
+\newcommand{\greek}[1]{\foreignlanguage{polutonikogreek}{#1}}
+\newcommand{\ethiopic}[1]{\foreignlanguage{amharic}{#1}}
