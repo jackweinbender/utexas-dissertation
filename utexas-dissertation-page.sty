@@ -17,16 +17,12 @@
 \pagestyle{plain}
 
 % set up quotations
-
-\renewenvironment{quote}%
-                 {\list{}{\leftmargin    0.5in
-                          \rightmargin   0.5in
-                          \topsep        18pt
-                          \partopsep     \z@
-                          \itemsep       \z@
-                          \parsep        18pt
-                          \itemindent    \z@
-                          \listparindent 0.5in
-                          }%
-                        \item[]\setSpacing{1.25}}%
-{\endlist}
+\newenvironment{translation}{
+  \setSpacing{1.25}%
+  \justifying
+  \setlength{\leftskip}{0.5in}%
+  \setlength{\rightskip}{1in}%
+  \setlength{\parindent}{\z@}%
+  \setlength{\parskip}{12pt}%
+  \ignorespaces}%
+  {\setSpacing{2}}
