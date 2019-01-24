@@ -8,7 +8,7 @@
 % Set Ragged Right
 \usepackage[originalparameters]{ragged2e}
 \RaggedRight
-\setlength{\parindent}{3em}
+\setlength{\parindent}{0.5in}
 
 % Global typographic properties (not Font family)
 \setSpacing{2}
@@ -16,13 +16,34 @@
 % Set Pagination to bottom/center
 \pagestyle{plain}
 
-% set up quotations
-\newenvironment{translation}{
-  \setSpacing{1.25}%
-  \justifying
-  \setlength{\leftskip}{0.5in}%
+% Global Quote Stuff
+\renewenvironment{quote}{%
+  \justifying%
+  \begin{Spacing}{1.25}
+  \setlength{\leftskip}{3em}%
   \setlength{\rightskip}{1in}%
   \setlength{\parindent}{\z@}%
   \setlength{\parskip}{12pt}%
-  \ignorespaces}%
-  {\setSpacing{2}}
+  \ignorespaces
+  }{\end{Spacing}}
+
+% Block level language settings
+\newenvironment{hebrewtranslation}{}{}
+\newenvironment{aramaictranslation}{}{}
+\newenvironment{greektranslation}{}{}
+
+% Transliteration (Italics)
+\newenvironment{transliteration}%
+  {\begin{quote}%
+    \itshape}%
+  {\end{quote}}
+
+% Ethiopic (Font, Babel)
+\newenvironment{ethiopictext}%
+  {\begin{quote}%
+    \selectlanguage{amharic}}%
+  {\end{quote}}
+
+% Translation (for English; just a wrapper for `quote`)
+\newenvironment{translation}%
+  {\begin{quote}}{\end{quote}}
