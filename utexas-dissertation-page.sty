@@ -28,9 +28,14 @@
   }{\end{Spacing}}
 
 % Block level language settings
-\newenvironment{hebrewtranslation}{}{}
-\newenvironment{aramaictranslation}{}{}
-\newenvironment{greektranslation}{}{}
+\newenvironment{aramaictext}%
+  {\begin{hebrewtext}}%
+  {\end{hebrewtext}}
+\newenvironment{hebrewtext}%
+  {\begin{quote}%
+    \selectlanguage{hebrew}}%
+  {\end{quote}}
+\newenvironment{greektext}{}{}
 
 % Transliteration (Italics)
 \newenvironment{transliteration}%
