@@ -33,6 +33,7 @@
   {\end{hebrewtext}}
 \newenvironment{hebrewtext}%
   {\begin{quote}%
+    \sloppy%
     \selectlanguage{hebrew}}%
   {\end{quote}}
 \newenvironment{greektext}{}{}
@@ -40,12 +41,14 @@
 % Transliteration (Italics)
 \newenvironment{transliteration}%
   {\begin{quote}%
+    \sloppy%
     \selectlanguage{transliteration}}%
   {\end{quote}}
 
 % Ethiopic (Font, Babel)
 \newenvironment{ethiopictext}%
   {\begin{quote}%
+    \sloppy%
     \selectlanguage{amharic}}%
   {\end{quote}}
 
