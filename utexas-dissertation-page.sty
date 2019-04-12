@@ -15,6 +15,11 @@
 
 % Set Pagination to bottom/center
 \pagestyle{plain}
+  % When page numbers fall when Babel has a different langauge
+  % selected, the page numbering uses the font set by Babel, rather
+  % than the default. This sets the page number font explicitly. 
+  \makeevenfoot{plain}{}{\selectlanguage{english}\thepage}{}
+  \makeoddfoot{plain}{}{\selectlanguage{american}\thepage}{}
 
 % Global Quote Stuff
 \renewenvironment{quote}{%
