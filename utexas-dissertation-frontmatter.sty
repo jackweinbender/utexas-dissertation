@@ -54,7 +54,6 @@
     \@date
   \end{center}
   \end{frontmatters}
-  \setcounter{page}{1}
 }
 
 \def\author#1{\gdef\@author{#1}}
@@ -90,7 +89,7 @@
     \end{center}
     %% More Here
     \restoregeometry
-    \setcounter{page}{1}
+
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%
@@ -115,14 +114,10 @@
 \def\@numberofmembers{2}
 
 \newcommand{\makesupervisor}{
-    \hfill\rule{3.25in}{0.5pt}\\
-    \hfill\makebox[3.25in][l]{\@supervisor, Supervisor }\\
-    \bigskip \medskip
+    \hfill\makebox[3.25in][l]{\@supervisor, Supervisor }\\[36pt]
 }
 \newcommand{\makemember}[1]{
-    \hfill\rule{3.25in}{0.5pt}\\
-    \hfill\makebox[3.25in][l]{#1}\\
-    \bigskip \medskip
+    \hfill\makebox[3.25in][l]{#1}\\[36pt]
 }
 
 \newcommand{\makesignatures}[1][1]{%
@@ -154,7 +149,6 @@
 
 
     \end{frontmatters}
-    \setcounter{page}{1}
 }
 
 
